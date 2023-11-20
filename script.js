@@ -1,18 +1,16 @@
 import API from "./config.js";
 
-initListeners();
-
-function initListeners() {
+const initListeners = () => {
     const cityInput = document.querySelector('#cityName');
     cityInput.addEventListener("keyup", (event) => {
-        if (event.code === "Enter") getGeoLocation();
+        if (event.code === "Enter") displayWeather();
     });
 
     const getWeatherButton = document.querySelector('#submit-search');
-    getWeatherButton.addEventListener("click", getGeoLocation);
+    getWeatherButton.addEventListener("click", displayWeather);
 }
 
-async function getGeoLocation() {
+const displayWeather = async () => {
     const cityName = document.querySelector("#cityName").value;
 
     if (cityName.trim()) {
@@ -112,3 +110,5 @@ const createWeatherCard = (weatherData, i) => {
 
     return card;
 }
+
+initListeners();
