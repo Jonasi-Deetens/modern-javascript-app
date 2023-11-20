@@ -19,9 +19,7 @@ const displayWeather = async () => {
         if(weatherData.error) {
             return alert("Hey are you sure you are not holding up your map upside down?")
         } else {
-            const cityNameContainer = document.querySelector('.city-info');
-            cityNameContainer.textContent = weatherData.location.name + ", " + weatherData.location.country;
-            
+            setCityName(weatherData)
             const weatherContainer = emptyContainer(document.querySelector(".weather-container"));
             for(let i= 0; i < 5; i++) {
                 const weatherCard = createWeatherCard(weatherData, i);
@@ -35,6 +33,12 @@ const fetchWeatherData = async (cityName) => {
     const result = await fetch("http://api.weatherapi.com/v1/forecast.json?key=" + API.key + "&q=" + cityName + "&days=7&aqi=no&alerts=no");
     const data = result.json();
     return data;
+}
+
+const setCityName = (data) => {
+    const cityNameContainer = document.querySelector('.city-info');
+    cityNameContainer.textContent = data.location.name + ", " + data.location.country;
+    
 }
 
 const emptyContainer = (container) => {
