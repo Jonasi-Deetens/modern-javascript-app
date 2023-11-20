@@ -24,9 +24,11 @@ async function getGeoLocation() {
             const cityNameContainer = document.querySelector('.city-info');
             cityNameContainer.textContent = weatherData.location.name + ", " + weatherData.location.country;
             
-            emptyWeatherContainer();
+            const weatherContainer = emptyContainer(document.querySelector(".weather-container"));
+            
             for(let i= 0; i < 5; i++) {
-                createWeatherCard(weatherData, i)
+                const weatherCard = createWeatherCard(weatherData, i);
+                weatherContainer.appendChild(weatherCard);
             }
         }
     }
@@ -39,9 +41,15 @@ async function fetchWeatherData(cityName)  {
     return data;
 }
 
-function createWeatherCard(weatherData, i) {
+const emptyContainer = (container) => {
+    while (container.lastChild) {
+        container.removeChild(container.lastChild);
+    };
+    return container;
+}
+
+const createWeatherCard = (weatherData, i) => {
     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const weatherContainer = document.querySelector(".weather-container");
     const date = new Date()
     const dayOfTheWeek = weekdays[(date.getDay() + i) % 7]
 
@@ -102,24 +110,5 @@ function createWeatherCard(weatherData, i) {
     maxTemp.innerHTML = weatherData.forecast.forecastday[i].day.maxtemp_c + "°C";
     minMaxSection.appendChild(maxTemp);
 
-    weatherContainer.appendChild(card);
+    return card;
 }
-
-function emptyWeatherContainer() {
-    const weatherContainer = document.querySelector(".weather-container");
-    while (weatherContainer.lastChild) {
-        weatherContainer.removeChild(weatherContainer.lastChild);
-    };
-}
-
-
-
-// This is a weather web application made for educational purposes. Please do not commercialize this project in any way whatsoever.
-// Made by a BeCode technical coach whom had a lot of fun making "bad code", and improved by the very learners of this class.
-// I want to mention that this is a fully working app, but can be optimized by: 
-// cleaning up, 
-// refactoring the code, 
-// renaming the variables, 
-// removing redundant code,
-// removing unnecessary comments,
-// storing information into variables for easier and more readable use 
