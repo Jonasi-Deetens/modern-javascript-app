@@ -34,7 +34,7 @@ async function getGeoLocation() {
     }
 }
 
-async function fetchWeatherData(cityName)  {
+const fetchWeatherData = async (cityName) => {
     const result = await fetch("http://api.weatherapi.com/v1/forecast.json?key=" + API.key + "&q=" + cityName + "&days=7&aqi=no&alerts=no");
     const data = result.json();
 
