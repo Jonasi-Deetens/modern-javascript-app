@@ -152,7 +152,7 @@ main .city-info {
     font-weight: 700;
 }
 
-.container{
+.weather-container{
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -163,7 +163,7 @@ main .city-info {
   padding-right: 10%;
 }
 
-.container .card{
+.weather-container .card{
   position: relative;
   width: 200px;
   height: 350px;
@@ -173,7 +173,7 @@ main .city-info {
   overflow: hidden;
 }
 
-.container .card:before{
+.weather-container .card:before{
   content: '';
   position: absolute;
   top: 0;
@@ -185,11 +185,11 @@ main .city-info {
   transition: 0.5s ease-in-out;
 }
 
-.container .card:hover:before{
+.weather-container .card:hover:before{
   clip-path: circle(300px at 80% -20%);
 }
 
-.container .card:after{
+.weather-container .card:after{
   content: 'Code';
   position: absolute;
   top: 40%;
@@ -201,7 +201,7 @@ main .city-info {
   color: rgba(255,255,25,0.05)
 }
 
-.container .card .imgBx{
+.weather-container .card .imgBx{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -211,13 +211,13 @@ main .city-info {
   transition: 0.5s;
 }
 
-.container .card:hover .imgBx{
+.weather-container .card:hover .imgBx{
   top: 0%;
   transform: translateY(0%);
     
 }
 
-.container .card .imgBx img{
+.weather-container .card .imgBx img{
   position: absolute;
   top: 40%;
   left: 50%;
@@ -225,7 +225,7 @@ main .city-info {
   width: 120px;
 }
 
-.container .card .contentBx{
+.weather-container .card .contentBx{
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -235,11 +235,11 @@ main .city-info {
   z-index: 10;
 }
 
-.container .card:hover .contentBx{
+.weather-container .card:hover .contentBx{
   height: 210px;
 }
 
-.container .card .contentBx h2{
+.weather-container .card .contentBx h2{
   position: relative;
   font-weight: 600;
   letter-spacing: 1px;
@@ -247,7 +247,7 @@ main .city-info {
   margin: 0;
 }
 
-.container .card .contentBx .details, .container .card .contentBx .color{
+.weather-container .card .contentBx .details, .weather-container .card .contentBx .color{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -258,7 +258,7 @@ main .city-info {
   padding-bottom: 0;
 }
 
-.container .card .contentBx h4{
+.weather-container .card .contentBx h4{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,25 +269,25 @@ main .city-info {
     padding-bottom: 0;
 }
 
-.container .card:hover .contentBx h4{
+.weather-container .card:hover .contentBx h4{
     opacity: 1;
     visibility: visible;
     transition-delay: 0.6s;
 }
 
-.container .card:hover .contentBx .details{
+.weather-container .card:hover .contentBx .details{
   opacity: 1;
   visibility: visible;
   transition-delay: 0.5s;
 }
 
-.container .card:hover .contentBx .color{
+.weather-container .card:hover .contentBx .color{
   opacity: 1;
   visibility: visible;
   transition-delay: 0.6s;
 }
 
-.container .card .contentBx .details h3, .container .card .contentBx .color h3{
+.weather-container .card .contentBx .details h3, .weather-container .card .contentBx .color h3{
   color: #fff;
   font-weight: 300;
   font-size: 14px;
@@ -296,7 +296,7 @@ main .city-info {
   margin-right: 10px;
 }
 
-.container .card .contentBx .details span{
+.weather-container .card .contentBx .details span{
   width: auto;
   height: 26px;
   text-align: center;
@@ -314,15 +314,15 @@ main .city-info {
   cursor: pointer;
 }
 
-.container .card .contentBx .details .min-temp:hover{
+.weather-container .card .contentBx .details .min-temp:hover{
   background: #5a9eec;
 }
 
-.container .card .contentBx .details .max-temp:hover{
+.weather-container .card .contentBx .details .max-temp:hover{
     background: #df6049;
   }
 
-.container .card .contentBx .color span{
+.weather-container .card .contentBx .color span{
   width: auto;
   height: auto;
   background: #ff0;
@@ -332,11 +332,11 @@ main .city-info {
   cursor: pointer;
 }
 
-.container .card .contentBx .color span:nth-child(2){
+.weather-container .card .contentBx .color span:nth-child(2){
   background: #9bdc28;
 }
 
-.container .card .contentBx a{
+.weather-container .card .contentBx a{
   display: inline-block;
   padding: 10px 20px;
   background: #fff;
@@ -351,14 +351,14 @@ main .city-info {
   margin-top: 0;
 }
 
-.container .card:hover .contentBx a{
+.weather-container .card:hover .contentBx a{
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.75s;
   
 }
 
-.container .main-card {
+.weather-container .main-card {
     display: flex;
     width: 100%;
     /* max-width: 700px; */
@@ -367,11 +367,11 @@ main .city-info {
     margin-bottom: 30px;
 }
 
-.container .main-card .imgBx + .contentBx {
+.weather-container .main-card .imgBx + .contentBx {
     max-width: 700px;
 }
 
-.container .main-card .imgBx img{
+.weather-container .main-card .imgBx img{
     position: absolute;
     top: 40%;
     left: 50%;
@@ -404,7 +404,7 @@ main .city-info {
         font-weight: bolder;
     }
 
-	.container .card, .main-card {
+	.weather-container .card, .main-card {
         width: 100%;
         margin-top: 15px;
         margin-bottom: 15px;
