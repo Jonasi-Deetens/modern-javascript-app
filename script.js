@@ -23,7 +23,6 @@ const displayWeather = async () => {
             cityNameContainer.textContent = weatherData.location.name + ", " + weatherData.location.country;
             
             const weatherContainer = emptyContainer(document.querySelector(".weather-container"));
-            
             for(let i= 0; i < 5; i++) {
                 const weatherCard = createWeatherCard(weatherData, i);
                 weatherContainer.appendChild(weatherCard);
@@ -35,7 +34,6 @@ const displayWeather = async () => {
 const fetchWeatherData = async (cityName) => {
     const result = await fetch("http://api.weatherapi.com/v1/forecast.json?key=" + API.key + "&q=" + cityName + "&days=7&aqi=no&alerts=no");
     const data = result.json();
-
     return data;
 }
 
@@ -110,5 +108,4 @@ const createWeatherCard = (weatherData, i) => {
 
     return card;
 }
-
 initListeners();
